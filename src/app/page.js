@@ -30,12 +30,12 @@ const StyledTitle = styled.h1`
 
 const StyledHeroBg = styled.div`
   background-color: #f2f1ec;
-  background-color: black;
+  /* background-color: black; */
   overflow-x: clip;
 `;
 
 const StyledHeroTextContainer = styled.div`
-  margin-left: 10%;
+  margin-left: 0;
 
   @media ${mediaQuery.smUp} {
     margin-left: 5%;
@@ -49,6 +49,17 @@ const StyledHeroTextContainer = styled.div`
 const StyledHeroP = styled.p`
   font-size: 16px;
   color: #626261;
+
+  width: 70%;
+  
+  @media ${mediaQuery.smUp} {
+    padding-bottom: 50px;
+    width: 100%;
+  }
+`;
+
+const StyledImgCol = styled(Col)`
+  position: relative;
 `;
 
 export default function Home() {
@@ -76,7 +87,7 @@ export default function Home() {
                 </StyledHeroP>
               </StyledHeroTextContainer>
             </Col>
-            <Col xs={12} sm={6}>
+            <StyledImgCol xs={12} sm={6}>
               <Spacer xs="20px" sm="0px" />
               <ImageAspectRatio
                 src={HeroImage}
@@ -89,7 +100,7 @@ export default function Home() {
                 }}
                 sm={{
                   styles: css`
-                    transform: scale(3) translateY(15px);
+                    transform: scale(2.4) translateY(38px);
                     margin-top: 100px;
                     margin-left: 80px;
                     /* background: #ff00003b; */
@@ -97,13 +108,20 @@ export default function Home() {
                 }}
                 md={{
                   styles: css`
-                    transform: scale(1.2) translateY(15px);
-                    background: #ff00003b;
+                    transform: scale(2.1) translateY(15px);
+                    /* background: #ff00003b; */
+                    /* background: red; */
+                  `,
+                }}
+                lg={{
+                  styles: css`
+                    transform: scale(1.6) translateY(-15px);
+                    /* background: #ff00003b; */
                     /* background: green; */
                   `,
                 }}
               />
-            </Col>
+            </StyledImgCol>
           </Row>
         </Container>
       </StyledHeroBg>

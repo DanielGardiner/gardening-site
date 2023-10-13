@@ -125,7 +125,7 @@ function ImageAspectRatio({
 
   return (
     <StyledImageContainer
-      data={newBreakpointData}
+      $breakpointData={newBreakpointData}
       styles={styles}
     >
       {Object.values(newBreakpointData)?.map((data, i) => {
@@ -161,42 +161,42 @@ const getBreakpointsInRange = (current, next, breakpoints) => {
 const StyledImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  aspect-ratio: ${({ data }) => data.xs.aspectRatio};
-  max-height: ${({ data }) => data.xs.maxHeight};
+  aspect-ratio: ${({ $breakpointData }) => $breakpointData.xs.aspectRatio};
+  max-height: ${({ $breakpointData }) => $breakpointData.xs.maxHeight};
   ${({ styles }) => styles}
-  ${({ data }) => data.xs.styles}
+  ${({ $breakpointData }) => $breakpointData.xs.styles}
 
   img {
     object-fit: cover;
   }
 
   @media ${mediaQuery.smUp} {
-    aspect-ratio: ${({ data }) => data.sm.aspectRatio};
-    max-height: ${({ data }) => data.sm.maxHeight};
-    ${({ data }) => data.sm.styles}
+    aspect-ratio: ${({ $breakpointData }) => $breakpointData.sm.aspectRatio};
+    max-height: ${({ $breakpointData }) => $breakpointData.sm.maxHeight};
+    ${({ $breakpointData }) => $breakpointData.sm.styles}
   }
 
   @media ${mediaQuery.mdUp} {
-    aspect-ratio: ${({ data }) => data.md.aspectRatio};
-    max-height: ${({ data }) => data.md.maxHeight};
-    ${({ data }) => data.md.styles}
+    aspect-ratio: ${({ $breakpointData }) => $breakpointData.md.aspectRatio};
+    max-height: ${({ $breakpointData }) => $breakpointData.md.maxHeight};
+    ${({ $breakpointData }) => $breakpointData.md.styles}
   }
 
   @media ${mediaQuery.lgUp} {
-    aspect-ratio: ${({ data }) => data.lg.aspectRatio};
-    max-height: ${({ data }) => data.lg.maxHeight};
-    ${({ data }) => data.lg.styles}
+    aspect-ratio: ${({ $breakpointData }) => $breakpointData.lg.aspectRatio};
+    max-height: ${({ $breakpointData }) => $breakpointData.lg.maxHeight};
+    ${({ $breakpointData }) => $breakpointData.lg.styles}
   }
 
   @media ${mediaQuery.xlUp} {
-    aspect-ratio: ${({ data }) => data.xl.aspectRatio};
-    max-height: ${({ data }) => data.xl.maxHeight};
-    ${({ data }) => data.xl.styles}
+    aspect-ratio: ${({ $breakpointData }) => $breakpointData.xl.aspectRatio};
+    max-height: ${({ $breakpointData }) => $breakpointData.xl.maxHeight};
+    ${({ $breakpointData }) => $breakpointData.xl.styles}
   }
 
   @media ${mediaQuery.xxlUp} {
-    aspect-ratio: ${({ data }) => data.xxl.aspectRatio};
-    max-height: ${({ data }) => data.xxl.maxHeight};
-    ${({ data }) => data.xxl.styles}
+    aspect-ratio: ${({ $breakpointData }) => $breakpointData.xxl.aspectRatio};
+    max-height: ${({ $breakpointData }) => $breakpointData.xxl.maxHeight};
+    ${({ $breakpointData }) => $breakpointData.xxl.styles}
   }
 `;

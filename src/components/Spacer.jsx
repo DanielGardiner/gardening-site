@@ -55,7 +55,7 @@ function Spacer({
   })
 
   return (
-    <StyledSpacer newBreakpointData={newBreakpointData} fluid={fluid} />
+    <StyledSpacer $newBreakpointData={newBreakpointData} fluid={fluid} />
   )
 
 }
@@ -63,38 +63,38 @@ function Spacer({
 export default Spacer;
 
 const StyledSpacer = styled.div`
-  height: ${({ newBreakpointData }) => newBreakpointData.xs.height};
-  background-color: ${({ newBreakpointData }) => newBreakpointData.xs.backgroundColor};
-  ${({ newBreakpointData }) => newBreakpointData.xs.styles};
+  height: ${({ $newBreakpointData }) => $newBreakpointData.xs.height};
+  background-color: ${({ $newBreakpointData }) => $newBreakpointData.xs.backgroundColor};
+  ${({ $newBreakpointData }) => $newBreakpointData.xs.styles};
   
   @media ${mediaQuery.smUp} {
-    height: ${({ newBreakpointData }) => newBreakpointData.sm.height};
-    background-color: ${({ newBreakpointData }) => newBreakpointData.sm.backgroundColor};
-    ${({ newBreakpointData }) => newBreakpointData.sm.styles};
+    height: ${({ $newBreakpointData }) => $newBreakpointData.sm.height};
+    background-color: ${({ $newBreakpointData }) => $newBreakpointData.sm.backgroundColor};
+    ${({ $newBreakpointData }) => $newBreakpointData.sm.styles};
   }
 
   @media ${mediaQuery.mdUp} {
-    height: ${({ newBreakpointData }) => newBreakpointData.md.height};
-    background-color: ${({ newBreakpointData }) => newBreakpointData.md.backgroundColor};
-    ${({ newBreakpointData }) => newBreakpointData.md.styles};
+    height: ${({ $newBreakpointData }) => $newBreakpointData.md.height};
+    background-color: ${({ $newBreakpointData }) => $newBreakpointData.md.backgroundColor};
+    ${({ $newBreakpointData }) => $newBreakpointData.md.styles};
   }
 
   @media ${mediaQuery.lgUp} {
-    height: ${({ newBreakpointData }) => newBreakpointData.lg.height};
-    background-color: ${({ newBreakpointData }) => newBreakpointData.lg.backgroundColor};
-    ${({ newBreakpointData }) => newBreakpointData.lg.styles};
+    height: ${({ $newBreakpointData }) => $newBreakpointData.lg.height};
+    background-color: ${({ $newBreakpointData }) => $newBreakpointData.lg.backgroundColor};
+    ${({ $newBreakpointData }) => $newBreakpointData.lg.styles};
   }
 
   @media ${mediaQuery.xlUp} {
-    height: ${({ newBreakpointData }) => newBreakpointData.xl.height};
-    background-color: ${({ newBreakpointData }) => newBreakpointData.xl.backgroundColor};
-    ${({ newBreakpointData }) => newBreakpointData.xl.styles};
+    height: ${({ $newBreakpointData }) => $newBreakpointData.xl.height};
+    background-color: ${({ $newBreakpointData }) => $newBreakpointData.xl.backgroundColor};
+    ${({ $newBreakpointData }) => $newBreakpointData.xl.styles};
   }
 
   @media ${mediaQuery.xxlUp} {
-    height: ${({ newBreakpointData }) => newBreakpointData.xxl.height};
-    background-color: ${({ newBreakpointData }) => newBreakpointData.xxl.backgroundColor};
-    ${({ newBreakpointData }) => newBreakpointData.xxl.styles};
+    height: ${({ $newBreakpointData }) => $newBreakpointData.xxl.height};
+    background-color: ${({ $newBreakpointData }) => $newBreakpointData.xxl.backgroundColor};
+    ${({ $newBreakpointData }) => $newBreakpointData.xxl.styles};
   }
 
   ${({ fluid }) => fluid && css`

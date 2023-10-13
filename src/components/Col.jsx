@@ -48,8 +48,8 @@ function Col({ children, className, xs, sm, md, lg, xl, xxl }) {
 
   return (
     <>
-      <StyledOffsetCol data={newBreakpointData} />
-      <StyledCol className={className} data={newBreakpointData}>
+      <StyledOffsetCol $breakpointData={newBreakpointData} />
+      <StyledCol className={className} $breakpointData={newBreakpointData}>
         {children}
       </StyledCol>
     </>
@@ -59,47 +59,47 @@ function Col({ children, className, xs, sm, md, lg, xl, xxl }) {
 export default Col;
 
 const StyledCol = styled.div`
-  grid-column: ${({ data }) => `span ${data.xs.span}`};
+  grid-column: ${({ $breakpointData }) => `span ${$breakpointData.xs.span}`};
 
   @media ${mediaQuery.smUp} {
-    grid-column: ${({ data }) => `span ${data.sm.span}`};
+    grid-column: ${({ $breakpointData }) => `span ${$breakpointData.sm.span}`};
   }
   @media ${mediaQuery.mdUp} {
-    grid-column: ${({ data }) => `span ${data.md.span}`};
+    grid-column: ${({ $breakpointData }) => `span ${$breakpointData.md.span}`};
   }
   @media ${mediaQuery.lgUp} {
-    grid-column: ${({ data }) => `span ${data.lg.span}`};
+    grid-column: ${({ $breakpointData }) => `span ${$breakpointData.lg.span}`};
   }
   @media ${mediaQuery.xlUp} {
-    grid-column: ${({ data }) => `span ${data.xl.span}`};
+    grid-column: ${({ $breakpointData }) => `span ${$breakpointData.xl.span}`};
   }
   @media ${mediaQuery.xxlUp} {
-    grid-column: ${({ data }) => `span ${data.xxl.span}`};
+    grid-column: ${({ $breakpointData }) => `span ${$breakpointData.xxl.span}`};
   }
 `;
 
 const StyledOffsetCol = styled.div`
-  display: ${({ data }) => (data.xs.offset ? 'block' : 'none')};
-  grid-column: ${({ data }) => data.xs.offset && `span ${data.xxl.offset}`};
+  display: ${({ $breakpointData }) => ($breakpointData.xs.offset ? 'block' : 'none')};
+  grid-column: ${({ $breakpointData }) => $breakpointData.xs.offset && `span ${$breakpointData.xxl.offset}`};
 
   @media ${mediaQuery.smUp} {
-    display: ${({ data }) => (data.sm.offset ? 'block' : 'none')};
-    grid-column: ${({ data }) => data.sm.offset && `span ${data.xxl.offset}`};
+    display: ${({ $breakpointData }) => ($breakpointData.sm.offset ? 'block' : 'none')};
+    grid-column: ${({ $breakpointData }) => $breakpointData.sm.offset && `span ${$breakpointData.xxl.offset}`};
   }
   @media ${mediaQuery.mdUp} {
-    display: ${({ data }) => (data.md.offset ? 'block' : 'none')};
-    grid-column: ${({ data }) => data.md.offset && `span ${data.xxl.offset}`};
+    display: ${({ $breakpointData }) => ($breakpointData.md.offset ? 'block' : 'none')};
+    grid-column: ${({ $breakpointData }) => $breakpointData.md.offset && `span ${$breakpointData.xxl.offset}`};
   }
   @media ${mediaQuery.lgUp} {
-    display: ${({ data }) => (data.lg.offset ? 'block' : 'none')};
-    grid-column: ${({ data }) => data.lg.offset && `span ${data.xxl.offset}`};
+    display: ${({ $breakpointData }) => ($breakpointData.lg.offset ? 'block' : 'none')};
+    grid-column: ${({ $breakpointData }) => $breakpointData.lg.offset && `span ${$breakpointData.xxl.offset}`};
   }
   @media ${mediaQuery.xlUp} {
-    display: ${({ data }) => (data.xl.offset ? 'block' : 'none')};
-    grid-column: ${({ data }) => data.xl.offset && `span ${data.xxl.offset}`};
+    display: ${({ $breakpointData }) => ($breakpointData.xl.offset ? 'block' : 'none')};
+    grid-column: ${({ $breakpointData }) => $breakpointData.xl.offset && `span ${$breakpointData.xxl.offset}`};
   }
   @media ${mediaQuery.xxlUp} {
-    display: ${({ data }) => (data.xxl.offset ? 'block' : 'none')};
-    grid-column: ${({ data }) => data.xxl.offset && `span ${data.xxl.offset}`};
+    display: ${({ $breakpointData }) => ($breakpointData.xxl.offset ? 'block' : 'none')};
+    grid-column: ${({ $breakpointData }) => $breakpointData.xxl.offset && `span ${$breakpointData.xxl.offset}`};
   }
 `;

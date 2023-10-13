@@ -1,95 +1,105 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import styled, { css } from "styled-components";
+import ImageAspectRatio from "@/components/ImageAspectRatio";
+import Container from "@/components/Container";
+import Row from "@/components/Row";
+import Col from "@/components/Col";
+import Spacer from "@/components/Spacer";
+import HeroImage from "/public/images/gardener-4-high.webp";
+import { mediaQuery } from "@/constants";
+
+const StyledTitle = styled.h1`
+  font-size: 36px;
+  line-height: 1.05;
+
+  font-weight: 500;
+  color: #3f1642;
+  > span {
+    font-weight: 200;
+    color: #27bbad;
+  }
+
+  @media ${mediaQuery.smUp} {
+    font-size: 48px;
+  }
+  @media ${mediaQuery.mdUp} {
+    font-size: 54px;
+  }
+`;
+
+const StyledHeroBg = styled.div`
+  background-color: #f2f1ec;
+`;
+
+const StyledHeroTextContainer = styled.div`
+  margin-left: 10%;
+
+  @media ${mediaQuery.smUp} {
+    margin-left: 20%;
+  }
+
+  @media ${mediaQuery.lgUp} {
+    margin-left: 30%;
+  }
+`;
+
+const StyledHeroP = styled.p`
+  font-size: 16px;
+  color: #626261;
+`;
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <StyledHeroBg>
+        <Spacer xs="60px" />
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <Container>
+          <Row>
+            <Col xs={12} sm={6}>
+              <StyledHeroTextContainer>
+                <StyledTitle>
+                  Providing
+                  <br />
+                  <span>Fresh produce</span>
+                  <br />
+                  Every day
+                </StyledTitle>
+                <StyledHeroP>
+                  Rooted Nullam vehicula ipsum a arcu cursus vitae congue.
+                  Convallis a cras semper auctor neque vitae tempus quam. Diam
+                  quam nulla porttitor massa id neque. Bibendum at varius vel
+                  pharetra vel turpis nunc.
+                </StyledHeroP>
+              </StyledHeroTextContainer>
+            </Col>
+            <Col xs={12} sm={6}>
+              <Spacer xs="20px" sm="0px" />
+              <ImageAspectRatio
+                src={HeroImage}
+                xs={{
+                  styles: css`
+                    transform: scale(1.2) translateY(15px);
+                    margin-left: -40px;
+                  `,
+                }}
+                sm={{
+                  styles: css`
+                    transform: scale(1.4) translateY(15px);
+                    margin-left: 0;
+                  `,
+                }}
+                md={{
+                  styles: css`
+                    transform: scale(1.2) translateY(15px);
+                  `,
+                }}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </StyledHeroBg>
     </main>
-  )
+  );
 }

@@ -30,13 +30,15 @@ const StyledTitle = styled.h1`
 
 const StyledHeroBg = styled.div`
   background-color: #f2f1ec;
+  background-color: black;
+  overflow-x: clip;
 `;
 
 const StyledHeroTextContainer = styled.div`
   margin-left: 10%;
 
   @media ${mediaQuery.smUp} {
-    margin-left: 20%;
+    margin-left: 5%;
   }
 
   @media ${mediaQuery.lgUp} {
@@ -82,17 +84,22 @@ export default function Home() {
                   styles: css`
                     transform: scale(1.2) translateY(15px);
                     margin-left: -40px;
+                    overflow-x: hidden;
                   `,
                 }}
                 sm={{
                   styles: css`
-                    transform: scale(1.4) translateY(15px);
-                    margin-left: 0;
+                    transform: scale(3) translateY(15px);
+                    margin-top: 100px;
+                    margin-left: 80px;
+                    /* background: #ff00003b; */
                   `,
                 }}
                 md={{
                   styles: css`
                     transform: scale(1.2) translateY(15px);
+                    background: #ff00003b;
+                    /* background: green; */
                   `,
                 }}
               />
